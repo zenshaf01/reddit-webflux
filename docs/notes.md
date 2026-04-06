@@ -1,7 +1,6 @@
 # Notes:
 
 # Project scope:
-
 I want to implement a Reddit clone using Spring Web flux. This will allow me to learn Spring Webflux.
 
 ## Functional Req:
@@ -30,3 +29,57 @@ I want to implement a Reddit clone using Spring Web flux. This will allow me to 
   - Start with user as auth is first feature
   - Move on to post
 - Create subreddit, Post and Comments resources moving forward
+
+## Schema:
+The following schema entities are needed for this application:
+
+- Accounts
+  - id
+  - username
+  - karma
+  - email
+  - password
+  - created_at
+  - updated_at
+- Roles
+  - id
+  - name
+  - created_at
+  - updated_at
+- Account_Roles
+  - user_id
+  - role_id
+- Sub_Reddits
+  - id
+  - name
+  - description
+  - created_at
+  - updated_at
+- Sub_Reddit_Moderator
+  - user_id
+  - sub_reddit_id
+- Sub_Reddit_Pinned_Posts
+  - sub_reddit_id
+  - post_id
+- Sub_Reddit_Memberships
+  - user_id
+  - sub_reddit_id
+- Posts
+  - id
+  - creator_id
+  - title
+  - body
+  - upvotes
+  - media_url
+  - created_at
+  - updated_at
+- Post_Comments
+  - post_id
+  - comment_id
+- Comments
+  - id
+  - body
+  - parent_comment_id
+  - upvotes
+  - created_at
+  - updated_at
