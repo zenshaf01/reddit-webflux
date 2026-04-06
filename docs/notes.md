@@ -14,9 +14,9 @@ I want to implement a Reddit clone using Spring Web flux. This will allow me to 
 - Users have a karma which start at 1 and aggregates with post upvotes or downvotes.
 
 ## Backend Features:
-- JWT and AuthO based auth
-- Entities and Repositories
-- Controllers and Services
+- JWT and AuthO based auth using WebFlux security
+- Entities and Repositories using reactive crud repositories
+- Controllers and Services using functional endpoints
 - Logging
 
 ## Steps:
@@ -24,7 +24,9 @@ I want to implement a Reddit clone using Spring Web flux. This will allow me to 
 - create required schemas in DB
 - Initialize base app
 - create health check endpoint
-- connect application with existing postgres deployment on computer
+- connect application with existing postgres deployment on computer. 
+  - The application should use flyway to run migration. 
+  - I want a initialization script that runs first and runs all the migration files which will setup schema and db tables the schema
 - Start defining entities and repositories
   - Start with user as auth is first feature
   - Move on to post
@@ -44,6 +46,7 @@ The following schema entities are needed for this application:
 - Roles
   - id
   - name
+  - description
   - created_at
   - updated_at
 - Account_Roles
